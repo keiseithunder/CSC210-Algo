@@ -1,8 +1,8 @@
 import javax.swing.*;
 public class RobotMotionPlaning {
-    static int n = 9;
+//    static int n = 9;
     public static void main(String[] args) {
-        Point point[] = new Point[n];
+        Point point[] = new Point[11];
         point[0] = new Point(50,100);
         point[1] = new Point(200,300);
         point[2] = new Point(250,80);
@@ -12,7 +12,8 @@ public class RobotMotionPlaning {
         point[6] = new Point(90,425);
         point[7] = new Point(500,140);
         point[8] = new Point(270,210);
-//        point[9] = new Point(420,90);
+        point[9] = new Point(420,90);
+        point[10] = new Point(420,800);
         TwoPoint[] convexHull = findBoundary(point);
         JFrame frame = new JFrame("convex hull");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,7 +22,7 @@ public class RobotMotionPlaning {
         frame.pack();
         frame.setVisible(true);
         Point a = new Point(10,100);
-        Point b = new Point(800,200);
+        Point b = new Point(800,800);
         TwoPoint[] ansOfRobotMotion = findRobotMotion(point,a,b);
         JFrame frame1 = new JFrame("Robot Motion");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,8 +35,8 @@ public class RobotMotionPlaning {
         int a,b,c,cOfK,boundaryCount;
         boundaryCount=0;
         TwoPoint[] boundary = new TwoPoint[points.length];
-        for (int i = 0; i <n-1; i++) {
-            for (int j = i+1; j < n; j++) {
+        for (int i = 0; i <points.length-1; i++) {
+            for (int j = i+1; j < points.length; j++) {
                 a = points[j].y - points[i].y;
                 b = points[i].x - points[j].x;
                 c = points[i].x*points[j].y - points[j].x*points[i].y;
