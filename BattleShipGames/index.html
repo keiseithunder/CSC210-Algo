@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="">
+
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/datatables/data-tables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+
+</head>
+
+<body>
+  <section class="section-table cid-rBFj6dGQSX" id="table1-4">
+
+
+
+    <div class="container container-table">
+
+
+      <div class="table-wrapper">
+        <div class="container">
+          <div class="row search">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+              <div class="dataTables_filter">
+                <label class="searchInfo mbr-fonts-style display-7"></label>
+                <input class="form-control input-sm" disabled="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="text-center">Let's play battle ship</h1>
+        <img src="battleship.jfif" alt="BattleShip picture" class="d-block mx-auto">
+        <div class="text-center">
+          <input type="button" value="Begin the game" class="btn btn-primary" onclick="gameInitial()">
+          <input type="button" value="give up surrender" class="btn btn-primary" onclick="showAnswer()">
+        </div>
+        <div class="text-center mt-5">
+          <input type="text" name="" id="rowChoose" placeholder="Choose Row">
+          <input type="text" name="" id="colChoose" placeholder="Choose Column">
+          <br>
+          <input class="mt-1" type="button" id='chooseBtn' value="Choose" onclick="play()">
+          <input class="mt-1" type="button" id='chooseBtn' value="Choose random" onclick="ranPlay()">
+          <br>
+          <input class="mt-1" type="text" name="" id="hitOrMiss">
+        </div>
+        <div class="container scroll">
+          <table class="table isSearch" cellspacing="0" id="boardTable">
+            <thead>
+              <tr class="table-heads ">
+
+                <th class="head-item mbr-fonts-style display-7">
+                  XX</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  1</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  2</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  3</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  4</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  5</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  6</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  7</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  8</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  9</th>
+                <th class="head-item mbr-fonts-style display-7">
+                  10</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">1</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">2</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">3</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">4</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">5</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">6</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">7</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">8</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">9</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+              <tr>
+                <td class="body-item mbr-fonts-style display-7">10</td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+                <td class="body-item mbr-fonts-style display-7"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="container table-info-container">
+          <div class="row info">
+            <div class="col-md-6">
+              <div class="dataTables_info mbr-fonts-style display-7">
+                <span class="infoBefore">Showing</span>
+                <span class="inactive infoRows"></span>
+                <span class="infoAfter">entries</span>
+                <span class="infoFilteredBefore">(filtered from</span>
+                <span class="inactive infoRows"></span>
+                <span class="infoFilteredAfter"> total entries)</span>
+              </div>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="engine"><a href="https://mobirise.info/j">website templates</a></section>
+  <section class="mbr-section contacts1 cid-rBFjX0ZO7J" id="contacts1-5">
+    <!---->
+
+    <!---->
+    <!--Overlay-->
+
+    <!--Container-->
+    <div class="container">
+      <div class="row">
+        <!--Titles-->
+        <div class="title col-12">
+          <h2 class="align-left mbr-fonts-style display-1">
+            Our Contacts
+          </h2>
+
+        </div>
+        <!--Left-->
+        <div class="col-12 col-md-6">
+          <div class="left-block wrapper">
+            <div class="b b-adress">
+              <h5 class="align-left mbr-fonts-style m-0 display-5">
+                Address:
+              </h5>
+              <p class="mbr-text align-left mbr-fonts-style display-7">
+                126 Prachautid Rd. Bangmod, Thungkru, Bamgkok</p>
+            </div>
+            <div class="b b-phone">
+              <h5 class="align-left mbr-fonts-style m-0 display-5">
+                Phone:
+              </h5>
+              <p class="mbr-text align-left mbr-fonts-style display-7">02-222-2522</p>
+            </div>
+            <div class="b b-mail">
+              <h5 class="align-left mbr-fonts-style m-0 display-5">
+                E-mail:
+              </h5>
+              <p class="mbr-text align-left mbr-fonts-style display-7">
+                abc@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--Right-->
+        <div class="col-12 col-md-6">
+          <div class="google-map"><iframe frameborder="0" style="border:0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJ9ZZzpVGi4jARI56-Js0p2C8"
+              allowfullscreen=""></iframe></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/datatables/jquery.data-tables.min.js"></script>
+  <script src="assets/datatables/data-tables.bootstrap4.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="game.js"></script>
+
+</body>
+
+</html>
